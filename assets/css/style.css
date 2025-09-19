@@ -284,3 +284,26 @@ button {
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+@media(max-width: 1024px) {
+    .wrapper {
+        padding: 40px;
+    }
+    .extensions-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 425px) {
+    .wrapper {
+        padding: 20px;
+    }
+    .caption {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .extensions-list {
+        grid-template-columns: 1fr;
+    }
+}

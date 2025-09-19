@@ -68,10 +68,15 @@ button {
     align-items: center;
     border-radius: 8px;
     transition: all 0.3s ease;
+    outline-offset: 2px;
 }
 
 .theme-toggle:hover {
     background-color: var(--neutral-600)
+}
+
+.theme-toggle:focus {
+    outline: 1px solid var(--red-500);
 }
 
 .moon-icon {
@@ -134,6 +139,7 @@ button {
     justify-content: center;
     font-weight: 500;
     border: 1px solid var(--neutral-700);
+    outline-offset: 2px;
 }
 
 .options button:hover {
@@ -142,11 +148,19 @@ button {
     color: var(--neutral-0)
 }
 
+.options button:focus {
+    outline: 1px solid var(--red-500);
+}
+
 .options .selected button,
 .options .selected button:hover {
     background-color: var(--red-500);
     border: 1px solid var(--red-400);
     color: var(--neutral-900);
+}
+
+.options .selected button:focus {
+    outline: 1px solid var(--red-500);
 }
 
 .extensions-list {
@@ -188,6 +202,7 @@ button {
 .card-footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 40px;
 }
 
@@ -197,12 +212,17 @@ button {
     border: 1px solid var(--neutral-600);
     color: var(--neutral-0);
     transition: all 0.3s ease;
+    outline-offset: 2px;
 }
 
 .footer-button:hover {
     background-color: var(--red-500);
     border: 1px solid var(--red-400);
     color: var(--neutral-900)
+}
+
+.footer-button:focus {
+    outline: 1px solid var(--red-500);
 }
 
 .toggle-switch {
@@ -228,6 +248,11 @@ button {
     background-color: var(--neutral-600);
     transition: .4s;
     border-radius: 24px;
+    outline-offset: 2px;
+}
+
+.toggle-switch input:focus+.slider {
+    outline: 1px solid var(--red-500);
 }
 
 .toggle-switch .slider:before {

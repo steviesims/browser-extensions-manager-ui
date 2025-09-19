@@ -56,13 +56,19 @@ button {
     justify-content: space-between;
     align-items: center;
     padding: 16px;
-    background-color: var(--neutral-800);
     border-radius: 16px;
+}
+
+.dark-mode .header {
+    background-color: var(--neutral-800);
+}
+
+.header {
+    background-color: var(--neutral-0);
 }
 
 .theme-toggle {
     padding: 8px;
-    background-color: var(--neutral-700);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,8 +77,20 @@ button {
     outline-offset: 2px;
 }
 
-.theme-toggle:hover {
+.dark-mode .theme-toggle {
+    background-color: var(--neutral-700);
+}
+
+.theme-toggle {
+    background-color: var(--neutral-200);
+}
+
+.dark-mode .theme-toggle:hover {
     background-color: var(--neutral-600)
+}
+
+.theme-toggle:hover {
+    background-color: var(--neutral-300);
 }
 
 .theme-toggle:focus {
@@ -106,12 +124,19 @@ button {
 
 .caption {
     font-size: 14px;
-    color: var(--neutral-100);
     text-align: center;
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.dark-mode .caption {
+    color: var(--neutral-100);
+}
+
+.caption {
+    color: var(--neutral-900);
 }
 
 .caption h3 {
@@ -129,8 +154,6 @@ button {
 
 .options button {
     padding: 8px 16px;
-    background-color: var(--neutral-800);
-    color: var(--neutral-300);
     border-radius: 999px;
     font-size: 14px;
     transition: all 0.3s ease;
@@ -138,25 +161,52 @@ button {
     align-items: center;
     justify-content: center;
     font-weight: 500;
-    border: 1px solid var(--neutral-700);
+    border-width: 1px;
+    border-style: solid;
     outline-offset: 2px;
+    outline-color: transparent;
 }
 
-.options button:hover {
+.dark-mode .options button {
+    background-color: var(--neutral-800);
+    color: var(--neutral-300);
+    border-color: var(--neutral-700);
+}
+
+.options button {
+    background-color: var(--neutral-0);
+    color: var(--neutral-900);
+    border-color: var(--neutral-100);
+}
+
+.dark-mode .options button:hover {
     background-color: var(--neutral-700);
     border: 1px solid var(--neutral-600);
     color: var(--neutral-0)
+}
+
+.options button:hover {
+    background-color: var(--neutral-100);
+    border: 1px solid var(--neutral-0);
+    color: var(--neutral-400);
 }
 
 .options button:focus {
     outline: 1px solid var(--red-500);
 }
 
+.dark-mode .options .selected button,
+.dark-mode .options .selected button:hover {
+    background-color: var(--red-500);
+    border: 1px solid var(--red-400);
+    color: var(--neutral-900);
+}
+
 .options .selected button,
 .options .selected button:hover {
     background-color: var(--red-500);
     border: 1px solid var(--red-400);
-    color: var(--neutral-900);
+    color: var(--neutral-0);
 }
 
 .options .selected button:focus {
@@ -173,12 +223,21 @@ button {
 }
 
 .card {
-    border: 1px solid var(--neutral-700);
+    border: 1px solid transparent;
     border-radius: 16px;
-    background: var(--neutral-800);
     padding: 16px;
     display: flex;
     flex-direction: column;
+}
+
+.dark-mode .card {
+    border-color: var(--neutral-700);
+    background: var(--neutral-800);
+}
+
+.card {
+    border-color: var(--neutral-200);
+    background: var(--neutral-0);
 }
 
 .card-body {
@@ -186,13 +245,27 @@ button {
     display: flex;
     align-items: flex-start;
     gap: 16px;
+}
+
+.dark-mode .card-body {
     color: var(--neutral-300);
 }
 
+.card-body {
+    color: var(--neutral-600);
+}
+
 .card-content h4 {
-    color: var(--neutral-100);
     margin: 0 0 4px;
     font-size: 18px;
+}
+
+.dark-mode .card-content h4 {
+    color: var(--neutral-100);
+}
+
+.card-content h4 {
+    color: var(--neutral-900);
 }
 
 .card-content p {
@@ -209,16 +282,31 @@ button {
 .footer-button {
     padding: 8px 16px;
     border-radius: 9999px;
-    border: 1px solid var(--neutral-600);
-    color: var(--neutral-0);
+    border: 1px solid transparent;
     transition: all 0.3s ease;
     outline-offset: 2px;
+}
+
+.dark-mode .footer-button {
+    border-color: var(--neutral-600);
+    color: var(--neutral-0);
+}
+
+.footer-button {
+    border-color: var(--neutral-300);
+    color: var(--neutral-900);
+}
+
+.dark-mode .footer-button:hover {
+    background-color: var(--red-500);
+    border: 1px solid var(--red-400);
+    color: var(--neutral-900)
 }
 
 .footer-button:hover {
     background-color: var(--red-500);
     border: 1px solid var(--red-400);
-    color: var(--neutral-900)
+    color: var(--neutral-0);
 }
 
 .footer-button:focus {
@@ -245,10 +333,17 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--neutral-600);
     transition: .4s;
     border-radius: 24px;
     outline-offset: 2px;
+}
+
+.dark-mode .toggle-switch .slider {
+    background-color: var(--neutral-600);
+}
+
+.toggle-switch .slider {
+    background-color: var(--neutral-300);
 }
 
 .toggle-switch input:focus+.slider {
@@ -275,8 +370,12 @@ button {
     transform: translateX(16px);
 }
 
-.attribution {
+.dark-mode .attribution {
     color: var(--neutral-300);
+}
+
+.attribution {
+    color: var(--neutral-600);
     font-size: 11px;
     text-align: center;
 }

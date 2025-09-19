@@ -55,18 +55,23 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
-    background-color: rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    background-color: var(--neutral-800);
     border-radius: 16px;
 }
 
 .theme-toggle {
     padding: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--neutral-700);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--neutral-600)
 }
 
 .moon-icon {
@@ -91,6 +96,7 @@ button {
     flex-direction: column;
     align-items: stretch;
     margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .caption {
@@ -119,7 +125,7 @@ button {
 .options button {
     padding: 8px 16px;
     background-color: var(--neutral-800);
-    color: var(--neutral-100);
+    color: var(--neutral-300);
     border-radius: 999px;
     font-size: 14px;
     transition: all 0.3s ease;
@@ -131,18 +137,121 @@ button {
 }
 
 .options button:hover {
-    background-color: var(--red-500);
-    border: 1px solid var(--red-400);
-    color: var(--neutral-900)
+    background-color: var(--neutral-700);
+    border: 1px solid var(--neutral-600);
+    color: var(--neutral-0)
 }
 
-.options .selected button {
+.options .selected button,
+.options .selected button:hover {
     background-color: var(--red-500);
     border: 1px solid var(--red-400);
     color: var(--neutral-900);
 }
 
+.extensions-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card {
+    border: 1px solid var(--neutral-700);
+    border-radius: 16px;
+    background: var(--neutral-800);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    color: var(--neutral-300);
+}
+
+.card-content h4 {
+    color: var(--neutral-100);
+    margin: 0 0 4px;
+    font-size: 18px;
+}
+
+.card-content p {
+    font-size: 14px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.footer-button {
+    padding: 8px 16px;
+    border-radius: 9999px;
+    border: 1px solid var(--neutral-600);
+    color: var(--neutral-0);
+    transition: all 0.3s ease;
+}
+
+.footer-button:hover {
+    background-color: var(--red-500);
+    border: 1px solid var(--red-400);
+    color: var(--neutral-900)
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--neutral-600);
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.toggle-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: var(--neutral-0);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.toggle-switch input:checked+.slider {
+    background-color: var(--red-500);
+}
+
+.toggle-switch input:checked+.slider:before {
+    transform: translateX(16px);
+}
+
 .attribution {
+    color: var(--neutral-300);
     font-size: 11px;
     text-align: center;
 }
